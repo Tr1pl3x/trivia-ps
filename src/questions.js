@@ -23,7 +23,6 @@ export const questions = {
           { text: "Badminton", isCorrect: false },
           { text: "Football", isCorrect: true },
           { text: "Tennis", isCorrect: false },
-          { text: "None of the above", isCorrect: false },
         ],
       },
       {
@@ -59,9 +58,9 @@ export const questions = {
         text: "What is Pyae Sone's ideal day?",
         answers: [
           { text: "Stay in, binge some TV shows and order in takeout food", isCorrect: false },
-          { text: "Brunch -> Gym -> Sunset -> Good Dinner", isCorrect: true },
-          { text: "Sunrise -> brunch -> badminton -> Good Dinner", isCorrect: false },
-          { text: "Sunrise -> nap -> gym -> steak, eggs and avos", isCorrect: false },
+          { text: "Brunch ➡️ Gym ➡️ Sunset ➡️ Good Dinner", isCorrect: true },
+          { text: "Sunrise ➡️ brunch ➡️ badminton ➡️ Good Dinner", isCorrect: false },
+          { text: "Sunrise ➡️ nap ➡️ gym ➡️ steak, eggs and avos", isCorrect: false },
         ],
       },
       {

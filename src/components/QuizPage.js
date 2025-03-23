@@ -6,33 +6,33 @@ const QuizPage = ({ difficulty, questions, onFinish }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
-  const [userAnswer, setUserAnswer] = useState(null); // Track the user's answer
-  const [correctAnswer, setCorrectAnswer] = useState(null); // Track the correct answer
+  const [userAnswer, setUserAnswer] = useState(null);
+  const [correctAnswer, setCorrectAnswer] = useState(null);
 
   const handleAnswer = (isCorrect, correctAnswerText, userAnswerText) => {
-    setUserAnswer(userAnswerText); // Store the user's answer
-    setCorrectAnswer(correctAnswerText); // Store the correct answer
-    setShowResult(true); // Show the result
+    setUserAnswer(userAnswerText);
+    setCorrectAnswer(correctAnswerText);
+    setShowResult(true);
 
     if (isCorrect) {
-      setScore(score + 1); // Update the score if the answer is correct
+      setScore(score + 1);
     }
   };
 
   const handleNextQuestion = () => {
     if (currentQuestion < questions.length - 1) {
-      setCurrentQuestion(currentQuestion + 1); // Move to the next question
-      setShowResult(false); // Reset for the next question
-      setUserAnswer(null); // Reset user's answer
-      setCorrectAnswer(null); // Reset correct answer
+      setCurrentQuestion(currentQuestion + 1);
+      setShowResult(false);
+      setUserAnswer(null);
+      setCorrectAnswer(null);
     } else {
-      onFinish(score); // Finish the quiz if it's the last question
+      onFinish(score);
     }
   };
 
   return (
     <div className="quiz-page">
-      <h2>Question {currentQuestion + 1}</h2>
+      <h2 className="quiz-title">Question {currentQuestion + 1}</h2>
       <Question
         question={questions[currentQuestion]}
         onAnswer={handleAnswer}
@@ -41,9 +41,11 @@ const QuizPage = ({ difficulty, questions, onFinish }) => {
         correctAnswer={correctAnswer}
       />
       {showResult && (
-        <button onClick={handleNextQuestion} className="next-button">
-          Next
-        </button>
+        <div className="next-button-container">
+          <button onClick={handleNextQuestion} className="next-button">
+            Next
+          </button>
+        </div>
       )}
     </div>
   );

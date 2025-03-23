@@ -17,12 +17,12 @@ const shuffleArray = (array) => {
 };
 
 const App = () => {
-  const [showHomePage, setShowHomePage] = useState(true); // Track if home page is shown
+  const [showHomePage, setShowHomePage] = useState(true);
   const [difficulty, setDifficulty] = useState(null);
   const [score, setScore] = useState(null);
 
   const handleStartQuiz = () => {
-    setShowHomePage(false); // Hide home page and show difficulty selection
+    setShowHomePage(false);
   };
 
   const handleStart = (difficulty) => {
@@ -33,9 +33,8 @@ const App = () => {
     setScore(score);
   };
 
-  // Function to reset the quiz state
   const resetQuiz = () => {
-    setShowHomePage(true); // Go back to home page
+    setShowHomePage(true);
     setDifficulty(null);
     setScore(null);
   };
@@ -79,7 +78,7 @@ const App = () => {
   return (
     <div className="App">
       {showHomePage ? (
-        <HomePage onStart={handleStartQuiz} /> // Show home page
+        <HomePage onStart={handleStartQuiz} />
       ) : (
         <>
           {!difficulty && !score && <StartPage onStart={handleStart} />}
@@ -94,7 +93,7 @@ const App = () => {
             <ResultPage
               score={score}
               difficulty={difficulty}
-              onRetry={resetQuiz} // Pass the reset function
+              onRetry={resetQuiz}
             />
           )}
         </>

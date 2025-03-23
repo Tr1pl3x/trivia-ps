@@ -1,22 +1,48 @@
+// src/components/ResultPage.js
 import React from 'react';
 
 const ResultPage = ({ score, difficulty, onRetry }) => {
   let prompt;
-  if (difficulty === 'hard' && score < 3) {
-    prompt = "You said you were an expert but damn! You know nothing about him!";
-  } else if (difficulty === 'normal' && score < 3) {
-    prompt = "You think you know him pretty well, but there's room for improvement!";
-  } else if (difficulty === 'easy' && score < 3) {
-    prompt = "You're familiar with him, but maybe spend more time together!";
-  } else {
-    prompt = "Great job! You really know Pyae Sone well!";
+  let buttonText = "Retry Quiz";
+  const shareText = "You should screenshot this result and share this with Pyae Sone 🎉"; // Always show this text
+
+  if (difficulty === 'hard') {
+    if (score === 5) {
+      prompt = "Hot damn! You really are an expert on him!";
+      buttonText = "Return Home";
+    } else if (score >= 3) {
+      prompt = "You said you are an expert and actually not bad. Room for improvement tho 😏";
+    } else {
+      prompt = "You call yourself an expert? how disappointing 😔";
+    }
+  } else if (difficulty === 'normal') {
+    if (score === 5) {
+      prompt = "I am impressed! 😲";
+      buttonText = "Return Home";
+    } else if (score >= 3) {
+      prompt = "Not bad, try harder next time tho :)";
+    } else {
+      prompt = "Nah I knew you were lying, how disappointing 😔";
+    }
+  } else if (difficulty === 'easy') {
+    if (score === 5) {
+      prompt = "Whoaa, I didn't know you were this observant 😳";
+      buttonText = "Return Home";
+    } else if (score >= 3) {
+      prompt = "Hmm, not bad, better luck next time tho :)";
+    } else {
+      prompt = "It's fine. I am happy you don't know me at all 🙂";
+    }
   }
 
   return (
     <div className="result-page">
       <h2>Your Score: {score}/5</h2>
       <p>{prompt}</p>
-      <button onClick={onRetry}>Retry Quiz</button> {/* Retry button */}
+      <p className="share-text">{shareText}</p> {/* Always show share text */}
+      <button onClick={onRetry} className="retry-button">
+        {buttonText}
+      </button>
     </div>
   );
 };

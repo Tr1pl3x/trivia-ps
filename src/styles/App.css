@@ -1,4 +1,13 @@
-/* src/styles/App.css */
+/* General styles */
+body {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Home Page */
 .home-page {
   text-align: center;
   margin-top: 50px;
@@ -17,119 +26,91 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 1.2em;
+  width: 300px;
+  margin: 10px 0;
 }
 
 .home-page button:hover {
   background-color: #555;
 }
 
-/* Existing styles for other components */
-
-body {
-  background-color: #121212;
-  color: #ffffff;
-  font-family: Arial, sans-serif;
-}
-
-.start-page, .quiz-page, .result-page {
+/* Start Page (Difficulty Selection) */
+.start-page {
   text-align: center;
   margin-top: 50px;
 }
 
-button {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  margin: 10px;
-  cursor: pointer;
+.start-page h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
 }
 
-button:hover {
+.difficulty-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.difficulty-buttons button {
+  padding: 10px 20px;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+  width: 300px;
+  text-align: center;
+}
+
+.difficulty-buttons button:hover {
   background-color: #555;
 }
 
-.question {
-  margin: 20px;
-}
-
-
-.question button {
-  display: block; /* Make buttons stack vertically */
-  width: 100%; /* Full width */
-  margin: 10px 0; /* Add spacing between buttons */
-  padding: 10px; /* Add padding for better clickability */
-  text-align: left; /* Align text to the left */
-  background-color: #444; /* Darker background for buttons */
-  color: #fff; /* White text */
-  border: none; /* Remove default border */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-}
-
-.question button:hover {
-  background-color: #555; /* Slightly lighter on hover */
-}
-
-/* src/styles/App.css */
-.result {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #333;
-  border-radius: 5px;
-}
-
-.result p {
-  margin: 5px 0;
-  font-size: 1.2em;
-}
-
-.result p:first-child {
+.difficulty-buttons button strong {
   font-weight: bold;
 }
 
-/* Add tick and cross styles */
-.result p::after {
-  margin-left: 10px;
+/* Quiz Page */
+.quiz-page {
+  text-align: center;
+  margin-top: 50px;
 }
 
-.result p:first-child::after {
-  content: "✔";
-  color: green;
+.quiz-title {
+  font-size: 2em;
+  margin-bottom: 20px;
 }
 
-.result p:last-child::after {
-  content: "✔";
-  color: green;
-}
-
-.result-page button {
+/* Question Page */
+.question {
+  text-align: center;
   margin-top: 20px;
+}
+
+.question h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.answer-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.answer-button {
   padding: 10px 20px;
   background-color: #444;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1em;
-}
-
-.result-page button:hover {
-  background-color: #555;
-}
-
-/* src/styles/App.css */
-.answer-button {
-  display: block;
-  width: 100%;
-  margin: 10px 0;
-  padding: 10px;
-  text-align: left;
-  background-color: #444;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  font-size: 1.2em;
+  width: 300px;
+  text-align: center;
 }
 
 .answer-button:hover:not(:disabled) {
@@ -146,7 +127,7 @@ button:hover {
 }
 
 .answer-button.incorrect {
-  background-color: #f44336; /* Red for incorrect answer */
+  background-color: #ae0600; /* Red for incorrect answer */
 }
 
 .icon {
@@ -154,7 +135,52 @@ button:hover {
   font-size: 1.2em;
 }
 
+/* Next Button Container */
+.next-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  padding-right: 20px;
+}
+
 .next-button {
+  padding: 10px 20px;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+.next-button:hover {
+  background-color: #555;
+}
+
+/* Result Page */
+.result-page {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.result-page h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.result-page p {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+/* Specific styles for share-text */
+.result-page .share-text {
+  font-size: 0.8em; /* Smaller font size */
+  color: #ccc;
+  margin-top: 20px;
+}
+
+.retry-button {
   margin-top: 20px;
   padding: 10px 20px;
   background-color: #444;
@@ -162,9 +188,9 @@ button:hover {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 1.2em;
 }
 
-.next-button:hover {
+.retry-button:hover {
   background-color: #555;
 }
