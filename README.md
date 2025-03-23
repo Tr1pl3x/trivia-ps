@@ -10,28 +10,6 @@ This project was created as a fun way to test your knowledge about Pyae Sone. Wh
 
 ---
 
-## Project Structure
-
-The project is organized as follows:
-
-trivia-ps/
-├── public/
-│ └── index.html
-├── src/
-│ ├── components/
-│ │ ├── HomePage.js
-│ │ ├── StartPage.js
-│ │ ├── QuizPage.js
-│ │ ├── Question.js
-│ │ └── ResultPage.js
-│ ├── App.js
-│ ├── index.js
-│ └── styles/
-│ └── App.css
-├── questions.js
-├── README.md
-└── package.json
-
 
 ### Key Files and Folders
 - **`public/`**: Contains the `index.html` file, which is the entry point for the app.
