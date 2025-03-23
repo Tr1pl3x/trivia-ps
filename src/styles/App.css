@@ -5,12 +5,15 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  height: 100vh; /* Ensure the body takes up the full viewport height */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 }
 
 /* Home Page */
 .home-page {
   text-align: center;
-  margin-top: 50px;
 }
 
 .home-page h1 {
@@ -37,7 +40,6 @@ body {
 /* Start Page (Difficulty Selection) */
 .start-page {
   text-align: center;
-  margin-top: 50px;
 }
 
 .start-page h1 {
@@ -75,7 +77,6 @@ body {
 /* Quiz Page */
 .quiz-page {
   text-align: center;
-  margin-top: 50px;
 }
 
 .quiz-title {
@@ -86,7 +87,6 @@ body {
 /* Question Page */
 .question {
   text-align: center;
-  margin-top: 20px;
 }
 
 .question h3 {
@@ -109,8 +109,9 @@ body {
   border-radius: 5px;
   cursor: pointer;
   font-size: 1.2em;
-  width: 300px;
-  text-align: center;
+  width: 400px; /* Wider buttons */
+  text-align: left; /* Align text to the left */
+  white-space: normal; /* Allow text to wrap */
 }
 
 .answer-button:hover:not(:disabled) {
@@ -160,7 +161,6 @@ body {
 /* Result Page */
 .result-page {
   text-align: center;
-  margin-top: 50px;
 }
 
 .result-page h2 {
@@ -173,9 +173,8 @@ body {
   margin: 10px 0;
 }
 
-/* Specific styles for share-text */
 .result-page .share-text {
-  font-size: 0.8em; /* Smaller font size */
+  font-size: 0.9em; /* Smaller font size */
   color: #ccc;
   margin-top: 20px;
 }
