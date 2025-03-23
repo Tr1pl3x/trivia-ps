@@ -5,7 +5,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  height: 100vh; /* Ensure the body takes up the full viewport height */
+  height: 100vh; /* Full viewport height */
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
@@ -192,4 +192,60 @@ body {
 
 .retry-button:hover {
   background-color: #555;
+}
+
+/* Media Queries for Mobile Devices (Width < 431px and Height < 933px) */
+@media (max-width: 431px) and (max-height: 933px) {
+  /* Home Page */
+  .home-page h1 {
+    font-size: 1.5em; /* Smaller font size for title */
+  }
+
+  .home-page button {
+    width: 90%; /* Full width for buttons */
+    font-size: 1em; /* Smaller font size for buttons */
+  }
+
+  /* Start Page (Difficulty Selection) */
+  .start-page h1 {
+    font-size: 1.5em; /* Smaller font size for title */
+  }
+
+  .difficulty-buttons button {
+    width: 90%; /* Full width for buttons */
+    font-size: 1em; /* Smaller font size for buttons */
+  }
+
+  /* Quiz Page */
+  .quiz-title {
+    font-size: 1.5em; /* Smaller font size for title */
+  }
+
+  /* Question Page */
+  .question h3 {
+    font-size: 1em; /* Smaller font size for question */
+  }
+
+  .answer-button {
+    width: 90%; /* Full width for buttons */
+    font-size: 1em; /* Smaller font size for buttons */
+  }
+
+  /* Result Page */
+  .result-page h2 {
+    font-size: 1.5em; /* Smaller font size for title */
+  }
+
+  .result-page p {
+    font-size: 1em; /* Smaller font size for text */
+  }
+
+  .result-page .share-text {
+    font-size: 0.8em; /* Smaller font size for share text */
+  }
+
+  .retry-button {
+    width: 90%; /* Full width for buttons */
+    font-size: 1em; /* Smaller font size for buttons */
+  }
 }
