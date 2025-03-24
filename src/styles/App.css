@@ -297,3 +297,88 @@ body {
   }
 }
 
+/* src/styles/App.css */
+/* Result Page */
+.result-page {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.result-page h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.gif-container {
+  margin: 20px 0;
+}
+
+.result-gif {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.result-page p {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.share-text {
+  font-size: 0.9em;
+  color: #ccc;
+  margin-top: 20px;
+}
+
+.retry-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+.retry-button:hover {
+  background-color: #555;
+}
+
+/* src/styles/App.css */
+/* Home Page */
+.home-page {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.home-page h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.gif-container {
+  margin: 20px 0;
+}
+
+.home-gif {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.start-button {
+  padding: 10px 20px;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+  width: 300px;
+  margin: 10px 0;
+}
+
+.start-button:hover {
+  background-color: #555;
+}
