@@ -1,10 +1,9 @@
-// src/components/ResultPage.js
 import React from 'react';
 
-const ResultPage = ({ score, difficulty, onRetry }) => {
+const ResultPage = ({ score, difficulty, onRetry, userName }) => {
   let prompt;
   let buttonText = "Retry Quiz";
-  const shareText = "You should screenshot this result and share this with Pyae Sone 🎉"; // Always show this text
+  const shareText = "You should screenshot this result and share this with Pyae Sone 🎉";
 
   if (difficulty === 'hard') {
     if (score === 5) {
@@ -39,7 +38,7 @@ const ResultPage = ({ score, difficulty, onRetry }) => {
     <div className="result-page">
       <h2>Your Score: {score}/5</h2>
       <p>{prompt}</p>
-      <p className="share-text">{shareText}</p> {/* Always show share text */}
+      <p className="share-text">{shareText}</p>
       <button onClick={onRetry} className="retry-button">
         {buttonText}
       </button>

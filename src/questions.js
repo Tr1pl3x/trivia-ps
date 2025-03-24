@@ -46,6 +46,15 @@ export const questions = {
     ],
     normal: [
       {
+        text: "Who was Pyae Sone's Top Artist in Spotify Wrapped 23?",
+        answers: [
+          { text: "Juice Wrld", isCorrect: true },
+          { text: "Kanye West", isCorrect: false },
+          { text: "Kendrick", isCorrect: false },
+          { text: "Drake", isCorrect: false },
+        ],
+      },
+      {
         text: "How many cameras does Pyae Sone Have?",
         answers: [
           { text: "4", isCorrect: false },
@@ -78,7 +87,7 @@ export const questions = {
           { text: "Dota2", isCorrect: true },
           { text: "CSGO", isCorrect: false },
           { text: "Call of Duty: Cold Wars", isCorrect: false },
-          { text: "Clash of Clans", isCorrect: false },
+          { text: "FIFA", isCorrect: false },
         ],
       },
       {
@@ -135,6 +144,15 @@ export const questions = {
           { text: "Charizard", isCorrect: false },
           { text: "Mewtwo", isCorrect: false },
           { text: "Gyrados", isCorrect: true },
+        ],
+      },
+      {
+        text: "Which FIFA Pyae Sone has spent most time on?",
+        answers: [
+          { text: "FIFA 20", isCorrect: false },
+          { text: "FIFA 21", isCorrect: true },
+          { text: "FIFA 24", isCorrect: false },
+          { text: "FIFA 18", isCorrect: false },
         ],
       },
     ],
