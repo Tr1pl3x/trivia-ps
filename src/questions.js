@@ -98,6 +98,16 @@ export const questions = {
           { text: "I secretly like to wear glasses while I study alone.", isCorrect: false },
         ],
       },
+      {
+        text: "What sitcom is Pyae Sone's all time favorite?",
+        answers: [
+          { text: "Friends", isCorrect: false },
+          { text: "How I met your Mother", isCorrect: true },
+          { text: "Seinfeld", isCorrect: false },
+          { text: "The Big Bang Theory", isCorrect: false },
+        ],
+      }
+      
     ],
     hard: [
       {
