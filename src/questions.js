@@ -10,7 +10,7 @@ export const questions = {
       {
         text: "Where is Pyae Sone's Hometown?",
         answers: [
-          { text: "Yangon, Myanmar", isCorrect: true },
+          { text: "Yangon, Myanmar ", isCorrect: true },
           { text: "Mandalay, Myanmar", isCorrect: false },
           { text: "Parramatta, NSW", isCorrect: false },
           { text: "Naypyidaw, Myanmar", isCorrect: false },
@@ -43,8 +43,83 @@ export const questions = {
           { text: "Black", isCorrect: true },
         ],
       },
+      {
+        text: "Does Pyae Sone more of a dog person or cat person?",
+        answers: [
+          { text: "cat", isCorrect: false },
+          { text: "dog", isCorrect: false },
+          { text: "neither, he a stone-cold bloke", isCorrect: true },
+        ],
+      },
+      {
+        text: "Does Pyae Sone enjoy pineapple on pizza?",
+        answers: [
+          { text: "Yes", isCorrect: true },
+          { text: "No", isCorrect: false },
+        ],
+      },
+      {
+        text: "What’s Pyae Sone’s star sign?",
+        answers: [
+          { text: "Sagittarius", isCorrect: true },
+          { text: "Capricorn", isCorrect: false },
+          { text: "Virgo", isCorrect: false },
+          { text: "Cancer", isCorrect: false },
+        ],
+      },
+      {
+        text: "How many aunts and uncles in total does Pyae Sone have?",
+        answers: [
+          { text: "3", isCorrect: false },
+          { text: "5", isCorrect: true },
+          { text: "7", isCorrect: false },
+          { text: "12", isCorrect: false },
+        ],
+      },
+      {
+        text: "What is Pyae Sone's major and main interest?",
+        answers: [
+          { text: "Computer Engineering, Machine Learning", isCorrect: false },
+          { text: "Computer Science, Machine Learning", isCorrect: false },
+          { text: "Computer Engineering, Web Development with AI", isCorrect: true },
+          { text: "Commerce and CompSci, Machine Learning and AI", isCorrect: false },
+        ],
+      },
+      
     ],
+    
+    
+    
+    
+    
     normal: [
+      {
+        text: "What’s the name of the first album Pyae Sone ever obsessed over?",
+        answers: [
+          { text: "Utopia by Travis Scott", isCorrect: true },
+          { text: "Vultures by Kanye West", isCorrect: false },
+          { text: "For all the dogs by Drake", isCorrect: false },
+          { text: "After Hours by the Weekend", isCorrect: false },
+        ],
+      },
+      {
+        text: "How many shoes does Pyae Sone have? (excluding badminton shoes and football cleats)",
+        answers: [
+          { text: "5", isCorrect: false },
+          { text: "7", isCorrect: false },
+          { text: "9", isCorrect: false },
+          { text: "11", isCorrect: true },
+        ],
+      },
+      {
+        text: "Where does Pyae Sone's little sister currently studying her A levels?",
+        answers: [
+          { text: "Cambridge, UK", isCorrect: true },
+          { text: "Oxford, UK", isCorrect: false },
+          { text: "Paramatta, NSW, Australia", isCorrect: false },
+          { text: "London , UK", isCorrect: false },
+        ],
+      },
       {
         text: "Who was Pyae Sone's Top Artist in Spotify Wrapped 23?",
         answers: [
@@ -98,7 +173,24 @@ export const questions = {
           { text: "I secretly like to wear glasses while I study alone.", isCorrect: false },
         ],
       },
+      {
+        text: "What sitcom is Pyae Sone's all time favorite?",
+        answers: [
+          { text: "Friends", isCorrect: false },
+          { text: "How I met your Mother", isCorrect: true },
+          { text: "Seinfeld", isCorrect: false },
+          { text: "The Big Bang Theory", isCorrect: false },
+        ],
+      }
+      
     ],
+    
+    
+    
+    
+    
+    
+    
     hard: [
       {
         text: "How much is Pyae Sone's rating on Chess.com?",
@@ -155,5 +247,42 @@ export const questions = {
           { text: "FIFA 18", isCorrect: false },
         ],
       },
+      {
+        text: "What is the longest Pyae Sone has ever stayed awake?",
+        answers: [
+          { text: "24 hours", isCorrect: false },
+          { text: "48 hours", isCorrect: false },
+          { text: "72 hours", isCorrect: true },
+          { text: "4 days", isCorrect: false },
+        ],
+      },
+      {
+        text: "Which playlist in 2024 Pyae Sone had on repeat?",
+        answers: [
+          { text: "Hardstone Psycho by Don Toliver", isCorrect: true },
+          { text: "Vultures 1 and 2 by Kanye West", isCorrect: false },
+          { text: "We Still Don't Trust You by Metro Boomin and Future", isCorrect: false },
+          { text: "Chromakopia by Tyler, the creator", isCorrect: false },
+        ],
+      },
+      {
+        text: "What color switch of mechanical keypress is Pyae Sone's Favorite?",
+        answers: [
+          { text: "Red", isCorrect: true },
+          { text: "Blue", isCorrect: false },
+          { text: "Brown", isCorrect: false },
+          { text: "Trick question, he likes membrane keys", isCorrect: false },
+        ],
+      },
+      {
+        text: "What iPhone app would Pyae Sone cannot stay without?",
+        answers: [
+          { text: "Gallery", isCorrect: false },
+          { text: "MyFitnessPal", isCorrect: true },
+          { text: "Instagram", isCorrect: false },
+          { text: "Chess.com", isCorrect: false },
+        ],
+      },
+      
     ],
   };
