@@ -1,6 +1,7 @@
 // src/App.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import HomePage from './components/HomePage';
+import NameInputPage from './components/NameInputPage';
 import StartPage from './components/StartPage';
 import QuizPage from './components/QuizPage';
 import ResultPage from './components/ResultPage';
@@ -18,11 +19,24 @@ const shuffleArray = (array) => {
 
 const App = () => {
   const [showHomePage, setShowHomePage] = useState(true);
+  const [showNameInputPage, setShowNameInputPage] = useState(false);
+  const [userName, setUserName] = useState('');
   const [difficulty, setDifficulty] = useState(null);
   const [score, setScore] = useState(null);
 
+  // Set the app title
+  useEffect(() => {
+    document.title = 'Pyae Sone Trivia Quiz';
+  }, []);
+
   const handleStartQuiz = () => {
     setShowHomePage(false);
+    setShowNameInputPage(true); // Show the name input page
+  };
+
+  const handleNameSubmit = (name) => {
+    setUserName(name); // Save the user's name
+    setShowNameInputPage(false); // Hide the name input page
   };
 
   const handleStart = (difficulty) => {
@@ -31,10 +45,14 @@ const App = () => {
 
   const handleFinish = (score) => {
     setScore(score);
+
+    // Log user details when the quiz is finished
+    logUserDetails(score);
   };
 
   const resetQuiz = () => {
     setShowHomePage(true);
+    setShowNameInputPage(false); // Reset to the home page
     setDifficulty(null);
     setScore(null);
   };
@@ -75,26 +93,42 @@ const App = () => {
     return selectedQuestions;
   };
 
+  // Function to log user details
+  const logUserDetails = (score) => {
+    const timestamp = new Date().toLocaleString(); // Get current timestamp
+    console.log('User Details:');
+    console.log('Name:', userName);
+    console.log('Score:', score);
+    console.log('Difficulty:', difficulty);
+    console.log('Timestamp:', timestamp);
+  };
+
   return (
     <div className="App">
       {showHomePage ? (
         <HomePage onStart={handleStartQuiz} />
       ) : (
         <>
-          {!difficulty && !score && <StartPage onStart={handleStart} />}
-          {difficulty && score === null && (
-            <QuizPage
-              difficulty={difficulty}
-              questions={getQuestions()}
-              onFinish={handleFinish}
-            />
-          )}
-          {score !== null && (
-            <ResultPage
-              score={score}
-              difficulty={difficulty}
-              onRetry={resetQuiz}
-            />
+          {showNameInputPage ? (
+            <NameInputPage onNameSubmit={handleNameSubmit} />
+          ) : (
+            <>
+              {!difficulty && !score && <StartPage onStart={handleStart} />}
+              {difficulty && score === null && (
+                <QuizPage
+                  difficulty={difficulty}
+                  questions={getQuestions()}
+                  onFinish={handleFinish}
+                />
+              )}
+              {score !== null && (
+                <ResultPage
+                  score={score}
+                  difficulty={difficulty}
+                  onRetry={resetQuiz}
+                />
+              )}
+            </>
           )}
         </>
       )}
