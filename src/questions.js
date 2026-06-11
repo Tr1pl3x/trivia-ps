@@ -85,14 +85,23 @@ export const questions = {
           { text: "Commerce and CompSci, Machine Learning and AI", isCorrect: false },
         ],
       },
-      
+
     ],
-    
-    
-    
-    
-    
+
+
+
+
+
     normal: [
+      {
+        text: "What's Pyae Sone's favorite album of 2026?",
+        answers: [
+          { text: "OCTANE by Don Toliver", isCorrect: true },
+          { text: "BULLY by Kanye West", isCorrect: false },
+          { text: "All three albums of Drake", isCorrect: false },
+          { text: "Deadbeat by Tame Impala", isCorrect: false },
+        ],
+      },
       {
         text: "What’s the name of the first album Pyae Sone ever obsessed over?",
         answers: [
@@ -100,6 +109,15 @@ export const questions = {
           { text: "Vultures by Kanye West", isCorrect: false },
           { text: "For all the dogs by Drake", isCorrect: false },
           { text: "After Hours by the Weekend", isCorrect: false },
+        ],
+      },
+      {
+        text: "What kind of football fan is Pyae Sone?",
+        answers: [
+          { text: "Plastic Fan", isCorrect: false },
+          { text: "Hardcore Man United Supporter", isCorrect: false },
+          { text: "Neutral, just a football admirer", isCorrect: true },
+          { text: "Performative, bro knows nothing about football", isCorrect: false },
         ],
       },
       {
@@ -154,6 +172,7 @@ export const questions = {
           { text: "Iced Latte with two sugar", isCorrect: false },
           { text: "Iced Long Black", isCorrect: false },
           { text: "Mocha with skim milk", isCorrect: false },
+          { text: "No, he perfomative and drink matcha latte", isCorrect: false },
         ],
       },
       {
@@ -182,15 +201,15 @@ export const questions = {
           { text: "The Big Bang Theory", isCorrect: false },
         ],
       }
-      
+
     ],
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     hard: [
       {
         text: "How much is Pyae Sone's rating on Chess.com?",
@@ -230,15 +249,6 @@ export const questions = {
         ],
       },
       {
-        text: "What is Pyae Sone's favorite Pokémon?",
-        answers: [
-          { text: "Pikachu", isCorrect: false },
-          { text: "Charizard", isCorrect: false },
-          { text: "Mewtwo", isCorrect: false },
-          { text: "Gyrados", isCorrect: true },
-        ],
-      },
-      {
         text: "Which FIFA Pyae Sone has spent most time on?",
         answers: [
           { text: "FIFA 20", isCorrect: false },
@@ -268,10 +278,11 @@ export const questions = {
       {
         text: "What color switch of mechanical keypress is Pyae Sone's Favorite?",
         answers: [
-          { text: "Red", isCorrect: true },
+          { text: "Red", isCorrect: false },
           { text: "Blue", isCorrect: false },
           { text: "Brown", isCorrect: false },
           { text: "Trick question, he likes membrane keys", isCorrect: false },
+          { text: "Purple", isCorrect: true },
         ],
       },
       {
@@ -283,6 +294,15 @@ export const questions = {
           { text: "Chess.com", isCorrect: false },
         ],
       },
-      
+      {
+        text: "What is Pyae Sone's dream watch in 2026?",
+        answers: [
+          { text: "Rolex Submariner", isCorrect: false },
+          { text: "Audemars Piguet (AP) Royal Oak", isCorrect: false },
+          { text: "Tudor Black Bay 58", isCorrect: true },
+          { text: "Patek Phillipe Annual Calendar", isCorrect: false },
+        ],
+      },
+
     ],
   };
