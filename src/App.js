@@ -104,44 +104,63 @@ const App = () => {
     return selectedQuestions;
   };
 
-// Function to send data to Google Sheets
+// Append a failed/unsent result to localStorage so it's never lost.
+const queueResultLocally = (data) => {
+  if (!window.localStorage) return;
+  try {
+    const saved = JSON.parse(localStorage.getItem('triviaPSResults') || '[]');
+    saved.push(data);
+    localStorage.setItem('triviaPSResults', JSON.stringify(saved));
+    console.log('Saved result to localStorage as fallback');
+  } catch (e) {
+    console.error('Error saving to localStorage:', e);
+  }
+};
+
+// Function to send data to Google Sheets.
+// Never throws — returns { success } and falls back to localStorage on failure.
 const sendDataToGoogleSheets = async (data) => {
   // Use the URL from your deployment
   const webAppUrl = 'https://script.google.com/macros/s/AKfycbytfh6JZFtSU6vdaQQY8thzxWlZKWZ4jMeOKBbsvYkAtKBFWO8duHsnn_k5DBQtqfMG2g/exec';
-  
+
   try {
-    // Add no-cors mode for development
+    // Send as text/plain so the browser treats this as a "simple" CORS request: no
+    // preflight, and Apps Script returns the response with the CORS header we can read.
+    // (application/json would trigger a preflight OPTIONS that Apps Script can't answer.)
+    // Unlike the old no-cors mode, this lets us actually see whether the write succeeded.
     const response = await fetch(webAppUrl, {
       method: 'POST',
-      mode: 'no-cors', // This is important for cross-origin requests during development
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'text/plain;charset=utf-8',
       },
       body: JSON.stringify(data),
+      redirect: 'follow',
     });
 
-    // Since no-cors mode doesn't return readable response, handle it differently
-    console.log('Request sent to Google Sheets');
-    
-    // For no-cors mode, we can't access the response body
-    // Just return a success message
-    return { success: true, message: "Data likely sent successfully" };
-  } catch (error) {
-    console.error('Error sending data to Google Sheets:', error);
-    
-    // Implement a fallback - save to localStorage
-    if (window.localStorage) {
-      try {
-        const savedResults = JSON.parse(localStorage.getItem('triviaPSResults') || '[]');
-        savedResults.push(data);
-        localStorage.setItem('triviaPSResults', JSON.stringify(savedResults));
-        console.log('Saved results to localStorage as fallback');
-      } catch (e) {
-        console.error('Error saving to localStorage:', e);
-      }
+    // e.g. HTTP 403 when the deployment's access is restricted, or 5xx from the script.
+    if (!response.ok) {
+      throw new Error(`Google Sheets responded with HTTP ${response.status}`);
     }
-    
-    throw error;
+
+    // Apps Script returns JSON like { result: "success", data: "..." }.
+    // A non-JSON body still counts as delivered, since the HTTP status was OK.
+    let body = null;
+    try {
+      body = await response.json();
+    } catch (e) {
+      // ignore — treat as success based on HTTP status
+    }
+
+    if (body && body.result && body.result !== 'success') {
+      throw new Error(`Google Sheets reported: ${JSON.stringify(body)}`);
+    }
+
+    console.log('Result successfully recorded to Google Sheets');
+    return { success: true };
+  } catch (error) {
+    console.error('Failed to send data to Google Sheets:', error);
+    queueResultLocally(data);
+    return { success: false, error: String(error) };
   }
 };
 
